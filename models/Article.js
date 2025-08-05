@@ -22,6 +22,10 @@ const ArticleSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  dislikes: {                     // ✅ Champ ajouté ici
+    type: Number,
+    default: 0
+  },
   comments: [
     {
       user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },

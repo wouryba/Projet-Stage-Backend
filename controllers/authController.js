@@ -27,9 +27,7 @@ const AuthController = {
         token,
         user: {
           name,
-          email,
-          password,
-         
+          email,         
           // ❌ Ne retourne jamais le mot de passe, même hashé
         }
       });
@@ -62,8 +60,7 @@ const AuthController = {
         token,
         user: {
           email,
-          password,
-
+          name: user.name
           // ❌ Ne retourne pas le mot de passe
         }
       });

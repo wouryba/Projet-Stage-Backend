@@ -112,6 +112,26 @@ exports.likeArticle = async (req, res) => {
   }
 };
 
+// ✅ Disliker un article
+exports.dislikeArticle = async (req, res) => {
+  try {
+    const article = await Article.findById(req.params.id);
+    if (!article) {
+      return res.status(404).json({ message: 'Article non trouvé.' });
+    }
+
+    article.dislikes += 1;
+    await article.save();
+
+    res.status(200).json({
+      message: 'Article disliké.',
+      dislikes: article.dislikes
+    });
+  } catch (err) {
+    res.status(500).json({ message: 'Erreur serveur.', error: err.message });
+  }
+};
+
 // ✅ Ajouter un commentaire à un article
 exports.addComment = async (req, res) => {
   const { text } = req.body;
