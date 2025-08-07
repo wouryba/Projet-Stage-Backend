@@ -22,7 +22,8 @@ const ArticleSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  dislikes: {                     // ✅ Champ ajouté ici
+  // 👇 Ajoute ceci si ce n’est pas encore là
+  dislikes: {
     type: Number,
     default: 0
   },

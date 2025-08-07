@@ -14,7 +14,7 @@ router.post('/', authMiddleware, articleController.createArticle);
 router.put('/:id', authMiddleware, articleController.updateArticle); // 🔁 Modifier
 router.delete('/:id', authMiddleware, articleController.deleteArticle); // 🗑️ Supprimer
 router.post('/:id/like', authMiddleware, articleController.likeArticle);
-router.post('/:id/like', authMiddleware, articleController.dislikeArticle);
+router.post('/:id/dislike', authMiddleware, articleController.dislikeArticle);
 router.post('/:id/comment', authMiddleware, articleController.addComment);
 router.put('/:id', articleController.updateArticle);
 
